@@ -210,7 +210,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         showDatePicker(
                           context: context,
                           initialDate: DateTime.now(),
-                          firstDate: DateTime(2021),
+                          firstDate: DateTime(1970),
                           lastDate: DateTime(2023),
                         ).then((date) {
                           //tambahkan setState dan panggil variabel _dateTime.
