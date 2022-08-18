@@ -28,18 +28,23 @@ class _HomeScreenState extends State<HomeScreen> {
       data: Themes(),
       child: Scaffold(
         floatingActionButton: FloatingActionButton(
-          onPressed: (){
+          onPressed: () {
             _showDialogLogout();
           },
-          child: Icon(Icons.exit_to_app, color: Colors.white,),
+          child: Icon(
+            Icons.exit_to_app,
+            color: Colors.white,
+          ),
           backgroundColor: Common.green,
         ),
         body: SafeArea(
           child: Column(
             children: [
-              SizedBox(height: 30,),
+              SizedBox(
+                height: 30,
+              ),
               Center(
-                child:   Text(
+                child: Text(
                   'Selamat datang $name\nKami akan membantu anda',
                   textAlign: TextAlign.center,
                   style: TextStyle(
@@ -47,7 +52,29 @@ class _HomeScreenState extends State<HomeScreen> {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-              )
+              ),
+              SizedBox(
+                height: 100,
+              ),
+              Image.asset(
+                'assets/images/logo.png',
+                fit: BoxFit.cover,
+                width: 150,
+                height: 150,
+              ),
+              SizedBox(
+                height: 30,
+              ),
+              Padding(
+                padding: EdgeInsets.all(20),
+                child: Text(
+                  'Sikopy merupakan aplikasi yang akan membantu anda untuk kegiatan usaha menerima simpanan dan memberikan pinjaman uang kepada anggotanya.',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
             ],
           ),
         ),
@@ -130,7 +157,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
                 Navigator.of(context).pushAndRemoveUntil(
                     MaterialPageRoute(builder: (context) => LoginScreen()),
-                        (Route<dynamic> route) => false);
+                    (Route<dynamic> route) => false);
               },
             ),
           ],
@@ -139,7 +166,6 @@ class _HomeScreenState extends State<HomeScreen> {
       },
     );
   }
-
 
   void getData() {
     FirebaseFirestore.instance

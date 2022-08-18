@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sikopy/screens/pengajuan/pengajuan_screen.dart';
 import 'package:sikopy/screens/pinjaman/pinjaman_screen.dart';
 import 'package:sikopy/widget/common.dart';
 
@@ -17,6 +18,7 @@ class _HomepageScreenState extends State<HomepageScreen> {
 
   final tabs = [
     HomeScreen(),
+    PengajuanScreen(),
     PinjamanScreen(),
     AngsuranScreen(),
   ];
@@ -36,6 +38,13 @@ class _HomepageScreenState extends State<HomepageScreen> {
           ),
           BottomNavigationBarItem(
             icon: Icon(
+              Icons.add_card,
+              color: (_currentIndex == 1) ?  Common.green : Colors.grey,
+            ),
+            label: 'Pengajuan',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
               Icons.monetization_on_outlined,
               color: (_currentIndex == 1) ?  Common.green : Colors.grey,
             ),
@@ -46,7 +55,7 @@ class _HomepageScreenState extends State<HomepageScreen> {
               Icons.account_balance_wallet_outlined,
               color: (_currentIndex == 2) ?  Common.green : Colors.grey,
             ),
-            label: 'Angsuran',
+            label: 'Simpanan',
           ),
         ],
         selectedItemColor:  Common.green,
